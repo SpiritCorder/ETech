@@ -1,0 +1,88 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="container mt-4">
+    <div class="text-center mb-4">
+        <h1 class="display-5">E-Tech Technical College</h1>
+        <p class="lead text-muted">Student Management System</p>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Department Management</h5>
+                    <p class="card-text text-muted">Manage academic departments with contact details and locations.</p>
+                </div>
+                <div class="card-footer bg-transparent">
+                    <a asp-page="/Departments/Index" class="btn btn-primary btn-sm">Manage Departments</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Course Management</h5>
+                    <p class="card-text text-muted">Manage courses, modules, and batches. Create courses with module assignments.</p>
+                </div>
+                <div class="card-footer bg-transparent">
+                    <a asp-page="/Courses/Index" class="btn btn-primary btn-sm">Manage Courses</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Lecturer Management</h5>
+                    <p class="card-text text-muted">Manage lecturers and their specialisations. Assign specialisation areas to lecturers.</p>
+                </div>
+                <div class="card-footer bg-transparent">
+                    <a asp-page="/Lecturers/Index" class="btn btn-primary btn-sm">Manage Lecturers</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Student Management</h5>
+                    <p class="card-text text-muted">Register students, assign to courses and batches, and track exam results.</p>
+                </div>
+                <div class="card-footer bg-transparent">
+                    <a asp-page="/Students/Index" class="btn btn-primary btn-sm">Manage Students</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Exam Management</h5>
+                    <p class="card-text text-muted">Manage exams with subjects, schedules, and locations.</p>
+                </div>
+                <div class="card-footer bg-transparent">
+                    <a asp-page="/Exams/Index" class="btn btn-primary btn-sm">Manage Exams</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Lecture Scheduling</h5>
+                    <p class="card-text text-muted">Schedule lectures and manage classrooms. Assign batches, lecturers, rooms, and time slots.</p>
+                </div>
+                <div class="card-footer bg-transparent">
+                    <a asp-page="/Lectures/Index" class="btn btn-primary btn-sm">Manage Lectures</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,73 @@
+@page
+@model ETechCollege.Pages.Modules.IndexModel
+@{
+    ViewData["Title"] = "Modules";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <div>
+            <h2>Modules</h2>
+            <p class="text-muted mb-0">View and manage academic modules.</p>
+        </div>
+        <div>
+            <a asp-page="/Courses/Index" class="btn btn-outline-secondary me-2">Back to Courses</a>
+            <a asp-page="/Modules/Create" class="btn btn-primary">Add New Module</a>
+        </div>
+    </div>
+    <hr />
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show">
+            @TempData["Success"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show">
+            @TempData["Error"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+
+    @if (Model.Modules.Any())
+    {
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Module Name</th>
+                    <th>Subject Area</th>
+                    <th style="width:160px;">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var module in Model.Modules)
+                {
+                    <tr>
+                        <td>@module.ModuleID</td>
+                        <td>@module.ModuleName</td>
+                        <td>@(module.SubjectArea ?? "—")</td>
+                        <td>
+                            <a asp-page="/Modules/Edit" asp-route-id="@module.ModuleID"
+                               class="btn btn-sm btn-outline-primary me-1">Edit</a>
+                            <form method="post" asp-page-handler="Delete" asp-route-id="@module.ModuleID"
+                                  class="d-inline"
+                                  onsubmit="return confirm('Are you sure you want to delete the module &quot;@module.ModuleName.Replace("'", "\\'")&quot;?');">
+                                <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <div class="alert alert-info">
+            No modules have been added yet. Click <strong>Add New Module</strong> to get started.
+        </div>
+    }
+</div>

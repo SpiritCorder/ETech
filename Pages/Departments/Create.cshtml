@@ -1,0 +1,45 @@
+@page
+@model ETechCollege.Pages.Departments.CreateModel
+@{
+    ViewData["Title"] = "Add Department";
+}
+
+<div class="container mt-4">
+    <h2>Add Department</h2>
+    <hr />
+
+    <div class="row">
+        <div class="col-md-6">
+            <form method="post">
+                <div asp-validation-summary="All" class="text-danger"></div>
+
+                <div class="mb-3">
+                    <label asp-for="Department.DepartmentName" class="form-label"></label>
+                    <input asp-for="Department.DepartmentName" class="form-control" />
+                    <span asp-validation-for="Department.DepartmentName" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Department.ContactNumber" class="form-label"></label>
+                    <input asp-for="Department.ContactNumber" class="form-control" />
+                    <span asp-validation-for="Department.ContactNumber" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Department.EmailAddress" class="form-label"></label>
+                    <input asp-for="Department.EmailAddress" class="form-control" type="email" />
+                    <span asp-validation-for="Department.EmailAddress" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Department.Location" class="form-label"></label>
+                    <input asp-for="Department.Location" class="form-control" />
+                    <span asp-validation-for="Department.Location" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Save</button>
+                <a asp-page="/Departments/Index" class="btn btn-secondary ms-2">Back to Departments</a>
+            </form>
+        </div>
+    </div>
+</div>

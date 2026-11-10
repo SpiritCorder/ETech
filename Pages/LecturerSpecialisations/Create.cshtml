@@ -1,0 +1,45 @@
+@page
+@model ETechCollege.Pages.LecturerSpecialisations.CreateModel
+@{
+    ViewData["Title"] = "Add Lecturer-Specialisation";
+}
+
+<div class="container mt-4">
+    <h2>Add Lecturer-Specialisation Mapping</h2>
+    <hr />
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show">
+            @TempData["Success"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+
+    <div class="row">
+        <div class="col-md-6">
+            <form method="post">
+                <div asp-validation-summary="All" class="text-danger"></div>
+
+                <div class="mb-3">
+                    <label asp-for="LecturerSpecialisation.LecturerID" class="form-label"></label>
+                    <select asp-for="LecturerSpecialisation.LecturerID" asp-items="Model.LecturerList" class="form-select">
+                        <option value="">-- Select Lecturer --</option>
+                    </select>
+                    <span asp-validation-for="LecturerSpecialisation.LecturerID" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="LecturerSpecialisation.SpecialisationID" class="form-label"></label>
+                    <select asp-for="LecturerSpecialisation.SpecialisationID" asp-items="Model.SpecialisationList" class="form-select">
+                        <option value="">-- Select Specialisation --</option>
+                    </select>
+                    <span asp-validation-for="LecturerSpecialisation.SpecialisationID" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Save</button>
+                <a asp-page="/Index" class="btn btn-secondary ms-2">Back to Home</a>
+            </form>
+        </div>
+    </div>
+</div>

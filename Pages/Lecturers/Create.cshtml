@@ -1,0 +1,125 @@
+@page
+@model ETechCollege.Pages.Lecturers.CreateModel
+@{
+    ViewData["Title"] = "Add Lecturer";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Add Lecturer</h2>
+        <a asp-page="/Lecturers/Index" class="btn btn-outline-secondary">Back to Lecturers</a>
+    </div>
+    <hr />
+
+    <form method="post">
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <div class="row">
+            <div class="col-md-8">
+                <h5>Lecturer Details</h5>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label asp-for="Lecturer.LecturerName" class="form-label"></label>
+                        <input asp-for="Lecturer.LecturerName" class="form-control" />
+                        <span asp-validation-for="Lecturer.LecturerName" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="Lecturer.NIC" class="form-label"></label>
+                        <input asp-for="Lecturer.NIC" class="form-control" />
+                        <span asp-validation-for="Lecturer.NIC" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label asp-for="Lecturer.DateOfBirth" class="form-label"></label>
+                        <input asp-for="Lecturer.DateOfBirth" class="form-control" type="date" />
+                        <span asp-validation-for="Lecturer.DateOfBirth" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="Lecturer.Gender" class="form-label"></label>
+                        <select asp-for="Lecturer.Gender" class="form-select">
+                            <option value="">-- Select Gender --</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                            <option value="Prefer not to say">Prefer not to say</option>
+                        </select>
+                        <span asp-validation-for="Lecturer.Gender" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Lecturer.Address" class="form-label"></label>
+                    <input asp-for="Lecturer.Address" class="form-control" />
+                    <span asp-validation-for="Lecturer.Address" class="text-danger"></span>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label asp-for="Lecturer.ContactNumber" class="form-label"></label>
+                        <input asp-for="Lecturer.ContactNumber" class="form-control" />
+                        <span asp-validation-for="Lecturer.ContactNumber" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="Lecturer.CivilStatus" class="form-label"></label>
+                        <select asp-for="Lecturer.CivilStatus" class="form-select">
+                            <option value="">-- Select --</option>
+                            <option value="Single">Single</option>
+                            <option value="Married">Married</option>
+                            <option value="Divorced">Divorced</option>
+                            <option value="Widowed">Widowed</option>
+                        </select>
+                        <span asp-validation-for="Lecturer.CivilStatus" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label asp-for="Lecturer.Qualifications" class="form-label"></label>
+                        <textarea asp-for="Lecturer.Qualifications" class="form-control" rows="3"></textarea>
+                        <span asp-validation-for="Lecturer.Qualifications" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="Lecturer.DepartmentID" class="form-label"></label>
+                        <select asp-for="Lecturer.DepartmentID" asp-items="Model.DepartmentList" class="form-select">
+                            <option value="">-- Select Department --</option>
+                        </select>
+                        <span asp-validation-for="Lecturer.DepartmentID" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <h5>Specialisations <small class="text-muted fw-normal">(optional)</small></h5>
+                @if (Model.SpecialisationAssignments.Any())
+                {
+                    <div class="list-group">
+                        @for (int i = 0; i < Model.SpecialisationAssignments.Count; i++)
+                        {
+                            <label class="list-group-item">
+                                <input type="hidden" name="SpecialisationAssignments[@i].SpecialisationID" value="@Model.SpecialisationAssignments[i].SpecialisationID" />
+                                <input type="checkbox" name="SpecialisationAssignments[@i].IsSelected" value="true"
+                                       class="form-check-input me-2"
+                                       @(Model.SpecialisationAssignments[i].IsSelected ? "checked" : "") />
+                                <input type="hidden" name="SpecialisationAssignments[@i].IsSelected" value="false" />
+                                @Model.SpecialisationAssignments[i].SpecialisationName
+                            </label>
+                        }
+                    </div>
+                }
+                else
+                {
+                    <div class="alert alert-warning">
+                        No specialisations available. <a asp-page="/Specialisations/Create">Add specialisations</a> first.
+                    </div>
+                }
+            </div>
+        </div>
+
+        <hr />
+        <button type="submit" class="btn btn-primary">Save</button>
+        <a asp-page="/Lecturers/Index" class="btn btn-secondary ms-2">Cancel</a>
+    </form>
+</div>

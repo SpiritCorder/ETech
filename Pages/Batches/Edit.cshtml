@@ -1,0 +1,51 @@
+@page "{id:int}"
+@model ETechCollege.Pages.Batches.EditModel
+@{
+    ViewData["Title"] = "Edit Batch";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Edit Batch</h2>
+        <a asp-page="/Batches/Index" class="btn btn-outline-secondary">Back to Batches</a>
+    </div>
+    <hr />
+
+    <div class="row">
+        <div class="col-md-6">
+            <form method="post">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <input type="hidden" asp-for="Batch.BatchID" />
+
+                <div class="mb-3">
+                    <label asp-for="Batch.BatchName" class="form-label"></label>
+                    <input asp-for="Batch.BatchName" class="form-control" />
+                    <span asp-validation-for="Batch.BatchName" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Batch.CourseID" class="form-label"></label>
+                    <select asp-for="Batch.CourseID" asp-items="Model.CourseList" class="form-select">
+                        <option value="">-- Select Course --</option>
+                    </select>
+                    <span asp-validation-for="Batch.CourseID" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Batch.StartDate" class="form-label"></label>
+                    <input asp-for="Batch.StartDate" class="form-control" type="date" />
+                    <span asp-validation-for="Batch.StartDate" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Batch.EndDate" class="form-label"></label>
+                    <input asp-for="Batch.EndDate" class="form-control" type="date" />
+                    <span asp-validation-for="Batch.EndDate" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+                <a asp-page="/Batches/Index" class="btn btn-secondary ms-2">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>

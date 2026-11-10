@@ -1,0 +1,81 @@
+@page
+@model ETechCollege.Pages.Lectures.IndexModel
+@{
+    ViewData["Title"] = "Lecture Scheduling";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <div>
+            <h2>Lecture Scheduling</h2>
+            <p class="text-muted mb-0">Schedule lectures and manage classrooms.</p>
+        </div>
+        <div>
+            <a asp-page="/Classrooms/Index" class="btn btn-outline-secondary me-2">Manage Classrooms</a>
+            <a asp-page="/Lectures/Create" class="btn btn-primary">Schedule New Lecture</a>
+        </div>
+    </div>
+    <hr />
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show">
+            @TempData["Success"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show">
+            @TempData["Error"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+
+    @if (Model.Lectures.Any())
+    {
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>Batch</th>
+                    <th>Lecturer</th>
+                    <th>Classroom</th>
+                    <th>Module</th>
+                    <th>Date</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                    <th style="width:160px;">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var lecture in Model.Lectures)
+                {
+                    <tr>
+                        <td>@lecture.BatchName</td>
+                        <td>@lecture.LecturerName</td>
+                        <td>@lecture.ClassroomNumber</td>
+                        <td>@lecture.ModuleName</td>
+                        <td>@lecture.LectureDate.ToString("yyyy-MM-dd")</td>
+                        <td>@lecture.StartTime.ToString(@"hh\:mm")</td>
+                        <td>@lecture.EndTime.ToString(@"hh\:mm")</td>
+                        <td>
+                            <a asp-page="/Lectures/Edit" asp-route-id="@lecture.LectureID"
+                               class="btn btn-sm btn-outline-primary me-1">Edit</a>
+                            <form method="post" asp-page-handler="Delete" asp-route-id="@lecture.LectureID"
+                                  class="d-inline"
+                                  onsubmit="return confirm('Are you sure you want to delete this lecture?');">
+                                <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <div class="alert alert-info">
+            No lectures have been scheduled yet. Click <strong>Schedule New Lecture</strong> to get started.
+        </div>
+    }
+</div>

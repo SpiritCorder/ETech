@@ -1,0 +1,74 @@
+@page
+@model ETechCollege.Pages.Classrooms.IndexModel
+@{
+    ViewData["Title"] = "Classrooms";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <div>
+            <h2>Classrooms</h2>
+        </div>
+        <div>
+            <a asp-page="/Lectures/Index" class="btn btn-outline-secondary me-2">Back to Lectures</a>
+            <a asp-page="/Classrooms/Create" class="btn btn-primary">Add New Classroom</a>
+        </div>
+    </div>
+    <hr />
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show">
+            @TempData["Success"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show">
+            @TempData["Error"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+
+    @if (Model.Classrooms.Any())
+    {
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Number</th>
+                    <th>Location</th>
+                    <th>Capacity</th>
+                    <th style="width:160px;">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var classroom in Model.Classrooms)
+                {
+                    <tr>
+                        <td>@classroom.ClassroomID</td>
+                        <td>@classroom.ClassroomNumber</td>
+                        <td>@classroom.Location</td>
+                        <td>@classroom.Capacity</td>
+                        <td>
+                            <a asp-page="/Classrooms/Edit" asp-route-id="@classroom.ClassroomID"
+                               class="btn btn-sm btn-outline-primary me-1">Edit</a>
+                            <form method="post" asp-page-handler="Delete" asp-route-id="@classroom.ClassroomID"
+                                  class="d-inline"
+                                  onsubmit="return confirm('Are you sure you want to delete classroom &quot;@classroom.ClassroomNumber.Replace("'", "\\'")&quot;?');">
+                                <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <div class="alert alert-info">
+            No classrooms have been added yet. Click <strong>Add New Classroom</strong> to get started.
+        </div>
+    }
+</div>

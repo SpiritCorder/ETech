@@ -1,0 +1,200 @@
+is_global = true
+build_property.TargetFramework = net10.0
+build_property.TargetFramework = net10.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.TargetFrameworkIdentifier = .NETCoreApp
+build_property.TargetFrameworkVersion = v10.0
+build_property.EntryPointFilePath = 
+build_property.RootNamespace = ETechCollege
+build_property.RootNamespace = ETechCollege
+build_property.ProjectDir = C:\Users\USER\Personal_Workspace\viraj_assignment\ETechCollege\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 10.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\USER\Personal_Workspace\viraj_assignment\ETechCollege
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 10.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/USER/Personal_Workspace/viraj_assignment/ETechCollege/Pages/Batches/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmF0Y2hlc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Personal_Workspace/viraj_assignment/ETechCollege/Pages/Batches/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmF0Y2hlc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Personal_Workspace/viraj_assignment/ETechCollege/Pages/Batches/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmF0Y2hlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Personal_Workspace/viraj_assignment/ETechCollege/Pages/Classrooms/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2xhc3Nyb29tc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Personal_Workspace/viraj_assignment/ETechCollege/Pages/Classrooms/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2xhc3Nyb29tc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Personal_Workspace/viraj_assignment/ETechCollege/Pages/Classrooms/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2xhc3Nyb29tc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Personal_Workspace/viraj_assignment/ETechCollege/Pages/CourseModules/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291cnNlTW9kdWxlc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Personal_Workspace/viraj_assignment/ETechCollege/Pages/Courses/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291cnNlc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Personal_Workspace/viraj_assignment/ETechCollege/Pages/Courses/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291cnNlc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Personal_Workspace/viraj_assignment/ETechCollege/Pages/Courses/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291cnNlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Personal_Workspace/viraj_assignment/ETechCollege/Pages/Departments/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGVwYXJ0bWVudHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Personal_Workspace/viraj_assignment/ETechCollege/Pages/Departments/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGVwYXJ0bWVudHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Personal_Workspace/viraj_assignment/ETechCollege/Pages/Departments/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGVwYXJ0bWVudHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Personal_Workspace/viraj_assignment/ETechCollege/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Personal_Workspace/viraj_assignment/ETechCollege/Pages/Exams/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXhhbXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Personal_Workspace/viraj_assignment/ETechCollege/Pages/Exams/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXhhbXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Personal_Workspace/viraj_assignment/ETechCollege/Pages/Exams/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXhhbXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Personal_Workspace/viraj_assignment/ETechCollege/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Personal_Workspace/viraj_assignment/ETechCollege/Pages/LecturerSpecialisations/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGVjdHVyZXJTcGVjaWFsaXNhdGlvbnNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Personal_Workspace/viraj_assignment/ETechCollege/Pages/Lecturers/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGVjdHVyZXJzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Personal_Workspace/viraj_assignment/ETechCollege/Pages/Lecturers/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGVjdHVyZXJzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Personal_Workspace/viraj_assignment/ETechCollege/Pages/Lecturers/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGVjdHVyZXJzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Personal_Workspace/viraj_assignment/ETechCollege/Pages/Lectures/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGVjdHVyZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Personal_Workspace/viraj_assignment/ETechCollege/Pages/Lectures/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGVjdHVyZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Personal_Workspace/viraj_assignment/ETechCollege/Pages/Lectures/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGVjdHVyZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Personal_Workspace/viraj_assignment/ETechCollege/Pages/Modules/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW9kdWxlc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Personal_Workspace/viraj_assignment/ETechCollege/Pages/Modules/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW9kdWxlc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Personal_Workspace/viraj_assignment/ETechCollege/Pages/Modules/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW9kdWxlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Personal_Workspace/viraj_assignment/ETechCollege/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Personal_Workspace/viraj_assignment/ETechCollege/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Personal_Workspace/viraj_assignment/ETechCollege/Pages/Specialisations/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3BlY2lhbGlzYXRpb25zXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Personal_Workspace/viraj_assignment/ETechCollege/Pages/Specialisations/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3BlY2lhbGlzYXRpb25zXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Personal_Workspace/viraj_assignment/ETechCollege/Pages/Specialisations/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3BlY2lhbGlzYXRpb25zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Personal_Workspace/viraj_assignment/ETechCollege/Pages/StudentExams/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudEV4YW1zXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Personal_Workspace/viraj_assignment/ETechCollege/Pages/StudentExams/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudEV4YW1zXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Personal_Workspace/viraj_assignment/ETechCollege/Pages/StudentExams/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudEV4YW1zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Personal_Workspace/viraj_assignment/ETechCollege/Pages/Students/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Personal_Workspace/viraj_assignment/ETechCollege/Pages/Students/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Personal_Workspace/viraj_assignment/ETechCollege/Pages/Students/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Personal_Workspace/viraj_assignment/ETechCollege/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Personal_Workspace/viraj_assignment/ETechCollege/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Personal_Workspace/viraj_assignment/ETechCollege/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-xytkpm2ps7

@@ -1,0 +1,102 @@
+@page "{id:int}"
+@model ETechCollege.Pages.Students.EditModel
+@{
+    ViewData["Title"] = "Edit Student";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Edit Student</h2>
+        <a asp-page="/Students/Index" class="btn btn-outline-secondary">Back to Students</a>
+    </div>
+    <hr />
+
+    <div class="row">
+        <div class="col-md-8">
+            <form method="post">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <input type="hidden" asp-for="Student.StudentID" />
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label asp-for="Student.StudentName" class="form-label"></label>
+                        <input asp-for="Student.StudentName" class="form-control" />
+                        <span asp-validation-for="Student.StudentName" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="Student.NIC" class="form-label"></label>
+                        <input asp-for="Student.NIC" class="form-control" />
+                        <span asp-validation-for="Student.NIC" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label asp-for="Student.DateOfBirth" class="form-label"></label>
+                        <input asp-for="Student.DateOfBirth" class="form-control" type="date" />
+                        <span asp-validation-for="Student.DateOfBirth" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="Student.Gender" class="form-label"></label>
+                        <select asp-for="Student.Gender" class="form-select">
+                            <option value="">-- Select Gender --</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                            <option value="Prefer not to say">Prefer not to say</option>
+                        </select>
+                        <span asp-validation-for="Student.Gender" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Student.Address" class="form-label"></label>
+                    <input asp-for="Student.Address" class="form-control" />
+                    <span asp-validation-for="Student.Address" class="text-danger"></span>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label asp-for="Student.ContactNumber" class="form-label"></label>
+                        <input asp-for="Student.ContactNumber" class="form-control" />
+                        <span asp-validation-for="Student.ContactNumber" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="Student.RegisteredDate" class="form-label"></label>
+                        <input asp-for="Student.RegisteredDate" class="form-control" type="date" />
+                        <span asp-validation-for="Student.RegisteredDate" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <label asp-for="Student.StudentType" class="form-label"></label>
+                        <select asp-for="Student.StudentType" class="form-select">
+                            <option value="">-- Select Type --</option>
+                            <option value="Internal">Internal</option>
+                            <option value="External">External</option>
+                        </select>
+                        <span asp-validation-for="Student.StudentType" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-4">
+                        <label asp-for="Student.CourseID" class="form-label"></label>
+                        <select asp-for="Student.CourseID" asp-items="Model.CourseList" class="form-select">
+                            <option value="">-- Select Course --</option>
+                        </select>
+                        <span asp-validation-for="Student.CourseID" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-4">
+                        <label asp-for="Student.BatchID" class="form-label"></label>
+                        <select asp-for="Student.BatchID" asp-items="Model.BatchList" class="form-select">
+                            <option value="">-- Select Batch --</option>
+                        </select>
+                        <span asp-validation-for="Student.BatchID" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+                <a asp-page="/Students/Index" class="btn btn-secondary ms-2">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>

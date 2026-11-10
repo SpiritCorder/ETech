@@ -1,0 +1,53 @@
+@page "{studentId:int}/{examId:int}"
+@model ETechCollege.Pages.StudentExams.EditModel
+@{
+    ViewData["Title"] = "Edit Exam Result";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Edit Exam Result</h2>
+        <a asp-page="/StudentExams/Index" class="btn btn-outline-secondary">Back to Exam Results</a>
+    </div>
+    <hr />
+
+    <div class="row">
+        <div class="col-md-6">
+            <form method="post">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <input type="hidden" asp-for="StudentExam.StudentID" />
+                <input type="hidden" asp-for="StudentExam.ExamID" />
+
+                <div class="mb-3">
+                    <label class="form-label">Student</label>
+                    <input type="text" class="form-control" value="@Model.StudentName" readonly />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Exam</label>
+                    <input type="text" class="form-control" value="@Model.ExamDisplay" readonly />
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="StudentExam.ResultStatus" class="form-label"></label>
+                    <select asp-for="StudentExam.ResultStatus" class="form-select">
+                        <option value="Registered">Registered</option>
+                        <option value="Present">Present</option>
+                        <option value="Absent">Absent</option>
+                        <option value="Completed">Completed</option>
+                    </select>
+                    <span asp-validation-for="StudentExam.ResultStatus" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="StudentExam.Marks" class="form-label"></label>
+                    <input asp-for="StudentExam.Marks" class="form-control" type="number" step="0.01" min="0" max="100" />
+                    <span asp-validation-for="StudentExam.Marks" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+                <a asp-page="/StudentExams/Index" class="btn btn-secondary ms-2">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,113 @@
+@page "{id:int}"
+@model ETechCollege.Pages.Courses.EditModel
+@{
+    ViewData["Title"] = "Edit Course";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Edit Course</h2>
+        <a asp-page="/Courses/Index" class="btn btn-outline-secondary">Back to Courses</a>
+    </div>
+    <hr />
+
+    <form method="post">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <input type="hidden" asp-for="Course.CourseID" />
+
+        <div class="row">
+            <div class="col-md-6">
+                <h5>Course Details</h5>
+
+                <div class="mb-3">
+                    <label asp-for="Course.CourseName" class="form-label"></label>
+                    <input asp-for="Course.CourseName" class="form-control" />
+                    <span asp-validation-for="Course.CourseName" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Course.DurationMonths" class="form-label"></label>
+                    <input asp-for="Course.DurationMonths" class="form-control" type="number" min="1" />
+                    <span asp-validation-for="Course.DurationMonths" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Course.DepartmentID" class="form-label"></label>
+                    <select asp-for="Course.DepartmentID" asp-items="Model.DepartmentList" class="form-select">
+                        <option value="">-- Select Department --</option>
+                    </select>
+                    <span asp-validation-for="Course.DepartmentID" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <h5>Assign Modules <small class="text-muted fw-normal">(optional)</small></h5>
+                <p class="text-muted small">Select modules to include in this course and set their sequence order.</p>
+
+                @if (Model.ModuleAssignments.Any())
+                {
+                    <table class="table table-sm table-bordered">
+                        <thead class="table-light">
+                            <tr>
+                                <th style="width:40px;"></th>
+                                <th>Module</th>
+                                <th>Subject Area</th>
+                                <th style="width:100px;">Sequence</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (int i = 0; i < Model.ModuleAssignments.Count; i++)
+                            {
+                                <tr>
+                                    <td class="text-center align-middle">
+                                        <input type="hidden" name="ModuleAssignments[@i].ModuleID" value="@Model.ModuleAssignments[i].ModuleID" />
+                                        <input type="checkbox" name="ModuleAssignments[@i].IsSelected" value="true"
+                                               class="form-check-input module-checkbox"
+                                               data-index="@i"
+                                               @(Model.ModuleAssignments[i].IsSelected ? "checked" : "") />
+                                        <input type="hidden" name="ModuleAssignments[@i].IsSelected" value="false" />
+                                    </td>
+                                    <td class="align-middle">@Model.ModuleAssignments[i].ModuleName</td>
+                                    <td class="align-middle text-muted">@(string.IsNullOrEmpty(Model.ModuleAssignments[i].SubjectArea) ? "—" : Model.ModuleAssignments[i].SubjectArea)</td>
+                                    <td>
+                                        <input type="number" name="ModuleAssignments[@i].Sequence"
+                                               value="@Model.ModuleAssignments[i].Sequence"
+                                               class="form-control form-control-sm sequence-input"
+                                               data-index="@i"
+                                               min="1" max="30"
+                                               @(!Model.ModuleAssignments[i].IsSelected ? "disabled" : "") />
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+                else
+                {
+                    <div class="alert alert-warning">
+                        No modules available. <a asp-page="/Modules/Create">Add modules</a> first.
+                    </div>
+                }
+            </div>
+        </div>
+
+        <hr />
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+        <a asp-page="/Courses/Index" class="btn btn-secondary ms-2">Cancel</a>
+    </form>
+</div>
+
+@section Scripts {
+    <script>
+        document.querySelectorAll('.module-checkbox').forEach(function (cb) {
+            cb.addEventListener('change', function () {
+                var idx = this.getAttribute('data-index');
+                var seqInput = document.querySelector('.sequence-input[data-index="' + idx + '"]');
+                seqInput.disabled = !this.checked;
+                if (!this.checked) {
+                    seqInput.value = '';
+                }
+            });
+        });
+    </script>
+}

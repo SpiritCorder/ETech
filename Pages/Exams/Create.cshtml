@@ -1,0 +1,60 @@
+@page
+@model ETechCollege.Pages.Exams.CreateModel
+@{
+    ViewData["Title"] = "Add Exam";
+}
+
+<div class="container mt-4">
+    <h2>Add Exam</h2>
+    <hr />
+
+    <div class="row">
+        <div class="col-md-8">
+            <form method="post">
+                <div asp-validation-summary="All" class="text-danger"></div>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label asp-for="Exam.ExamNumber" class="form-label"></label>
+                        <input asp-for="Exam.ExamNumber" class="form-control" />
+                        <span asp-validation-for="Exam.ExamNumber" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="Exam.Subject" class="form-label"></label>
+                        <input asp-for="Exam.Subject" class="form-control" />
+                        <span asp-validation-for="Exam.Subject" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <label asp-for="Exam.ExamDate" class="form-label"></label>
+                        <input asp-for="Exam.ExamDate" class="form-control" type="date" />
+                        <span asp-validation-for="Exam.ExamDate" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-4">
+                        <label asp-for="Exam.StartTime" class="form-label"></label>
+                        <input asp-for="Exam.StartTime" class="form-control" type="time" />
+                        <span asp-validation-for="Exam.StartTime" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-4">
+                        <label asp-for="Exam.Location" class="form-label"></label>
+                        <input asp-for="Exam.Location" class="form-control" />
+                        <span asp-validation-for="Exam.Location" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Exam.DepartmentID" class="form-label"></label>
+                    <select asp-for="Exam.DepartmentID" asp-items="Model.DepartmentList" class="form-select">
+                        <option value="">-- Select Department --</option>
+                    </select>
+                    <span asp-validation-for="Exam.DepartmentID" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Save</button>
+                <a asp-page="/Exams/Index" class="btn btn-secondary ms-2">Back to Exams</a>
+            </form>
+        </div>
+    </div>
+</div>

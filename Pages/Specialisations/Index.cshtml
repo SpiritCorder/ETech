@@ -1,0 +1,71 @@
+@page
+@model ETechCollege.Pages.Specialisations.IndexModel
+@{
+    ViewData["Title"] = "Specialisations";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <div>
+            <h2>Specialisations</h2>
+            <p class="text-muted mb-0">View and manage lecturer specialisation areas.</p>
+        </div>
+        <div>
+            <a asp-page="/Lecturers/Index" class="btn btn-outline-secondary me-2">Back to Lecturers</a>
+            <a asp-page="/Specialisations/Create" class="btn btn-primary">Add New Specialisation</a>
+        </div>
+    </div>
+    <hr />
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show">
+            @TempData["Success"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show">
+            @TempData["Error"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+
+    @if (Model.Specialisations.Any())
+    {
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Specialisation Name</th>
+                    <th style="width:160px;">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var spec in Model.Specialisations)
+                {
+                    <tr>
+                        <td>@spec.SpecialisationID</td>
+                        <td>@spec.SpecialisationName</td>
+                        <td>
+                            <a asp-page="/Specialisations/Edit" asp-route-id="@spec.SpecialisationID"
+                               class="btn btn-sm btn-outline-primary me-1">Edit</a>
+                            <form method="post" asp-page-handler="Delete" asp-route-id="@spec.SpecialisationID"
+                                  class="d-inline"
+                                  onsubmit="return confirm('Delete specialisation &quot;@spec.SpecialisationName.Replace("'", "\\'")&quot;?');">
+                                <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <div class="alert alert-info">
+            No specialisations have been added yet. Click <strong>Add New Specialisation</strong> to get started.
+        </div>
+    }
+</div>

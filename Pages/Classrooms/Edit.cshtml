@@ -1,0 +1,43 @@
+@page "{id:int}"
+@model ETechCollege.Pages.Classrooms.EditModel
+@{
+    ViewData["Title"] = "Edit Classroom";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Edit Classroom</h2>
+        <a asp-page="/Classrooms/Index" class="btn btn-outline-secondary">Back to Classrooms</a>
+    </div>
+    <hr />
+
+    <div class="row">
+        <div class="col-md-6">
+            <form method="post">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <input type="hidden" asp-for="Classroom.ClassroomID" />
+
+                <div class="mb-3">
+                    <label asp-for="Classroom.ClassroomNumber" class="form-label"></label>
+                    <input asp-for="Classroom.ClassroomNumber" class="form-control" />
+                    <span asp-validation-for="Classroom.ClassroomNumber" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Classroom.Location" class="form-label"></label>
+                    <input asp-for="Classroom.Location" class="form-control" />
+                    <span asp-validation-for="Classroom.Location" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Classroom.Capacity" class="form-label"></label>
+                    <input asp-for="Classroom.Capacity" class="form-control" type="number" min="1" />
+                    <span asp-validation-for="Classroom.Capacity" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+                <a asp-page="/Classrooms/Index" class="btn btn-secondary ms-2">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>

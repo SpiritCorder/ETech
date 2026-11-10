@@ -1,0 +1,31 @@
+@page "{id:int}"
+@model ETechCollege.Pages.Specialisations.EditModel
+@{
+    ViewData["Title"] = "Edit Specialisation";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Edit Specialisation</h2>
+        <a asp-page="/Specialisations/Index" class="btn btn-outline-secondary">Back to Specialisations</a>
+    </div>
+    <hr />
+
+    <div class="row">
+        <div class="col-md-6">
+            <form method="post">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <input type="hidden" asp-for="Specialisation.SpecialisationID" />
+
+                <div class="mb-3">
+                    <label asp-for="Specialisation.SpecialisationName" class="form-label"></label>
+                    <input asp-for="Specialisation.SpecialisationName" class="form-control" />
+                    <span asp-validation-for="Specialisation.SpecialisationName" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+                <a asp-page="/Specialisations/Index" class="btn btn-secondary ms-2">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>

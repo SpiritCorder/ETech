@@ -1,0 +1,73 @@
+@page
+@model ETechCollege.Pages.Lectures.CreateModel
+@{
+    ViewData["Title"] = "Add Lecture";
+}
+
+<div class="container mt-4">
+    <h2>Add Lecture</h2>
+    <hr />
+
+    <div class="row">
+        <div class="col-md-8">
+            <form method="post">
+                <div asp-validation-summary="All" class="text-danger"></div>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label asp-for="Lecture.BatchID" class="form-label"></label>
+                        <select asp-for="Lecture.BatchID" asp-items="Model.BatchList" class="form-select">
+                            <option value="">-- Select Batch --</option>
+                        </select>
+                        <span asp-validation-for="Lecture.BatchID" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="Lecture.LecturerID" class="form-label"></label>
+                        <select asp-for="Lecture.LecturerID" asp-items="Model.LecturerList" class="form-select">
+                            <option value="">-- Select Lecturer --</option>
+                        </select>
+                        <span asp-validation-for="Lecture.LecturerID" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label asp-for="Lecture.ClassroomID" class="form-label"></label>
+                        <select asp-for="Lecture.ClassroomID" asp-items="Model.ClassroomList" class="form-select">
+                            <option value="">-- Select Classroom --</option>
+                        </select>
+                        <span asp-validation-for="Lecture.ClassroomID" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="Lecture.ModuleID" class="form-label"></label>
+                        <select asp-for="Lecture.ModuleID" asp-items="Model.ModuleList" class="form-select">
+                            <option value="">-- Select Module --</option>
+                        </select>
+                        <span asp-validation-for="Lecture.ModuleID" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <label asp-for="Lecture.LectureDate" class="form-label"></label>
+                        <input asp-for="Lecture.LectureDate" class="form-control" type="date" />
+                        <span asp-validation-for="Lecture.LectureDate" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-4">
+                        <label asp-for="Lecture.StartTime" class="form-label"></label>
+                        <input asp-for="Lecture.StartTime" class="form-control" type="time" />
+                        <span asp-validation-for="Lecture.StartTime" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-4">
+                        <label asp-for="Lecture.EndTime" class="form-label"></label>
+                        <input asp-for="Lecture.EndTime" class="form-control" type="time" />
+                        <span asp-validation-for="Lecture.EndTime" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Save</button>
+                <a asp-page="/Lectures/Index" class="btn btn-secondary ms-2">Back to Lectures</a>
+            </form>
+        </div>
+    </div>
+</div>

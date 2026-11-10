@@ -1,0 +1,77 @@
+@page
+@model ETechCollege.Pages.Batches.IndexModel
+@{
+    ViewData["Title"] = "Batches";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <div>
+            <h2>Batches</h2>
+            <p class="text-muted mb-0">View and manage student batches.</p>
+        </div>
+        <div>
+            <a asp-page="/Courses/Index" class="btn btn-outline-secondary me-2">Back to Courses</a>
+            <a asp-page="/Batches/Create" class="btn btn-primary">Add New Batch</a>
+        </div>
+    </div>
+    <hr />
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show">
+            @TempData["Success"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show">
+            @TempData["Error"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+
+    @if (Model.Batches.Any())
+    {
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Batch Name</th>
+                    <th>Course</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th style="width:160px;">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var batch in Model.Batches)
+                {
+                    <tr>
+                        <td>@batch.BatchID</td>
+                        <td>@batch.BatchName</td>
+                        <td>@batch.CourseName</td>
+                        <td>@batch.StartDate.ToString("yyyy-MM-dd")</td>
+                        <td>@batch.EndDate.ToString("yyyy-MM-dd")</td>
+                        <td>
+                            <a asp-page="/Batches/Edit" asp-route-id="@batch.BatchID"
+                               class="btn btn-sm btn-outline-primary me-1">Edit</a>
+                            <form method="post" asp-page-handler="Delete" asp-route-id="@batch.BatchID"
+                                  class="d-inline"
+                                  onsubmit="return confirm('Delete batch &quot;@batch.BatchName.Replace("'", "\\'")&quot;?');">
+                                <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <div class="alert alert-info">
+            No batches have been added yet. Click <strong>Add New Batch</strong> to get started.
+        </div>
+    }
+</div>

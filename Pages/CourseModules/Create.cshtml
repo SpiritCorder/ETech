@@ -1,0 +1,51 @@
+@page
+@model ETechCollege.Pages.CourseModules.CreateModel
+@{
+    ViewData["Title"] = "Add Course-Module Mapping";
+}
+
+<div class="container mt-4">
+    <h2>Add Course-Module Mapping</h2>
+    <hr />
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show">
+            @TempData["Success"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+
+    <div class="row">
+        <div class="col-md-6">
+            <form method="post">
+                <div asp-validation-summary="All" class="text-danger"></div>
+
+                <div class="mb-3">
+                    <label asp-for="CourseModule.CourseID" class="form-label"></label>
+                    <select asp-for="CourseModule.CourseID" asp-items="Model.CourseList" class="form-select">
+                        <option value="">-- Select Course --</option>
+                    </select>
+                    <span asp-validation-for="CourseModule.CourseID" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="CourseModule.ModuleID" class="form-label"></label>
+                    <select asp-for="CourseModule.ModuleID" asp-items="Model.ModuleList" class="form-select">
+                        <option value="">-- Select Module --</option>
+                    </select>
+                    <span asp-validation-for="CourseModule.ModuleID" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="CourseModule.ModuleSequence" class="form-label"></label>
+                    <input asp-for="CourseModule.ModuleSequence" class="form-control" type="number" min="1" max="30" />
+                    <span asp-validation-for="CourseModule.ModuleSequence" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Save</button>
+                <a asp-page="/Index" class="btn btn-secondary ms-2">Back to Home</a>
+            </form>
+        </div>
+    </div>
+</div>

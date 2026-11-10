@@ -1,0 +1,79 @@
+@page
+@model ETechCollege.Pages.StudentExams.IndexModel
+@{
+    ViewData["Title"] = "Exam Results";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <div>
+            <h2>Exam Results</h2>
+            <p class="text-muted mb-0">View and manage student exam registrations and results.</p>
+        </div>
+        <div>
+            <a asp-page="/Students/Index" class="btn btn-outline-secondary me-2">Back to Students</a>
+            <a asp-page="/StudentExams/Create" class="btn btn-primary">Add Registration</a>
+        </div>
+    </div>
+    <hr />
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show">
+            @TempData["Success"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show">
+            @TempData["Error"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+
+    @if (Model.StudentExams.Any())
+    {
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>Student</th>
+                    <th>Exam</th>
+                    <th>Status</th>
+                    <th>Marks</th>
+                    <th style="width:160px;">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var se in Model.StudentExams)
+                {
+                    <tr>
+                        <td>@se.StudentName</td>
+                        <td>@se.ExamDisplay</td>
+                        <td>@se.ResultStatus</td>
+                        <td>@(se.Marks.HasValue ? se.Marks.Value.ToString("F2") : "\u2014")</td>
+                        <td>
+                            <a asp-page="/StudentExams/Edit"
+                               asp-route-studentId="@se.StudentID"
+                               asp-route-examId="@se.ExamID"
+                               class="btn btn-sm btn-outline-primary me-1">Edit</a>
+                            <form method="post" asp-page-handler="Delete"
+                                  asp-route-studentId="@se.StudentID"
+                                  asp-route-examId="@se.ExamID"
+                                  class="d-inline"
+                                  onsubmit="return confirm('Are you sure you want to delete this exam registration?');">
+                                <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <div class="alert alert-info">
+            No exam registrations have been added yet. Click <strong>Add Registration</strong> to get started.
+        </div>
+    }
+</div>
